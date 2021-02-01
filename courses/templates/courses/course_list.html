@@ -1,0 +1,30 @@
+{% extends "head.html" %}
+{% block content %}
+    <section class="section section__course__wrap">
+        <div class="container">
+            <div class="section__course">
+                <div class="scourse__top">
+                    <h1 class="h1 scourse__title">Все курсы</h1>
+                    <div class="scourse__filter">
+                        <label class="label" for="search">Поиск</label>
+                        <input class="input" type="text" placeholder="программирование">
+                    </div>
+                </div>
+                {% if course_list %}
+                    <ul class="scourse__list">
+                        {% for course in course_list %}
+                            <li class="course">
+                                <div class="course__img">
+                                    {% load static %}
+                                    <img src="{% static course.img %}" alt="">
+                                </div>
+                                <h3 class="h3 course__title">{{ course.title }}</h3>
+                                <a href="{{ course.get_absolute_url }}" class="button course__link">Подробнее</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

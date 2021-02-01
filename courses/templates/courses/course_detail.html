@@ -1,0 +1,24 @@
+{% extends "head.html" %}
+{% block content %}
+    <section class="section section__course__wrap">
+        <div class="container">
+            <div class="section__course section__course-detail">
+                <div class="scourse__top">
+                    <h1 class="h1 scourse__title">{{course.title}}</h1>
+                </div>
+                <div class="scourse__bottom">
+                    <div class="scourse__left">
+                        <p class="text">
+                            {{course.desc}}
+                        </p>
+                        <a href="{% url 'cards' course.id %}" class="button course__link">Начать курс!</a>
+                    </div>
+                    <div class="scourse__right courseDetail__image">
+                        {% load static %}
+                        <img src="{% static course.img %}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
