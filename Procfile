@@ -1,0 +1,1 @@
+web: gunicorn ptechml.wsgi --log-file -
