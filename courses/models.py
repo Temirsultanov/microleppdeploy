@@ -21,7 +21,6 @@ class Card(models.Model):
     title = models.CharField(max_length=100, help_text="Введите заголовок карточки",verbose_name="Заголовок")
     text = models.TextField(max_length=1000, help_text="Введите контент карточки", verbose_name="Контент карточки")
     queue = models.IntegerField(help_text="Введите место в очереди", verbose_name="Место в очереди")
-    # id = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text="Уникальный ID")
     def __str__(self):
         return self.title
 
