@@ -2,7 +2,6 @@
 
 from django.db import migrations, models
 import django.db.models.deletion
-import uuid
 
 
 class Migration(migrations.Migration):
@@ -36,7 +35,6 @@ class Migration(migrations.Migration):
                 ('text', models.TextField(help_text='Enter a text of the cards', max_length=1000, verbose_name='Описание')),
                 ('title', models.CharField(help_text='Enter a title of the cards', max_length=100, verbose_name='Заголовок')),
                 ('queue', models.IntegerField(help_text='Enter the place of queue', verbose_name='Место в очереди')),
-                ('id', models.UUIDField(default=uuid.uuid4, help_text='Уникальный ID', primary_key=True, serialize=False)),
                 ('course', models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to='courses.course')),
             ],
             options={
